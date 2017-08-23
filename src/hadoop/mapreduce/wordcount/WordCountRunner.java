@@ -1,4 +1,4 @@
-package hadoop.mapreduce;
+package hadoop.mapreduce.wordcount;
 
 import java.io.IOException;
 import org.apache.hadoop.conf.Configuration;
@@ -18,9 +18,9 @@ public class WordCountRunner
 		Job job = new Job(conf);
 
 		// 组建Job类，提交给mapreduce
-		job.setJarByClass(hadoop.mapreduce.WordCountRunner.class);
-		job.setMapperClass(hadoop.mapreduce.WcMapper.class);
-		job.setReducerClass(hadoop.mapreduce.WcReducer.class);
+		job.setJarByClass(hadoop.mapreduce.wordcount.WordCountRunner.class);
+		job.setMapperClass(hadoop.mapreduce.wordcount.WcMapper.class);
+		job.setReducerClass(hadoop.mapreduce.wordcount.WcReducer.class);
 
 		// 设置输入输出类型
 		job.setMapOutputKeyClass(Text.class);
